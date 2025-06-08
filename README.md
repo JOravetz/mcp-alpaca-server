@@ -12,7 +12,7 @@ A sophisticated **Model Context Protocol (MCP) server** that transforms Alpaca's
 ### 🏗️ **Enterprise Architecture**
 ```
 mcp_alpaca_server/
-├── prompts/           # Intelligent analysis prompts
+├── prompts/          # Intelligent analysis prompts
 ├── tools/            # 40+ specialized trading tools
 ├── resources/        # Real-time market analysis engines
 ├── config/           # Flexible client management
@@ -56,7 +56,7 @@ mcp_alpaca_server/
 ```bash
 # Clone the repository
 git clone <your-repo-url>
-cd alpaca-mcp-server
+cd mcp-alpaca-server
 
 # Install dependencies with UV (recommended)
 uv sync
