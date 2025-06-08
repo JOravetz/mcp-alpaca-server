@@ -11,7 +11,7 @@ A sophisticated **Model Context Protocol (MCP) server** that transforms Alpaca's
 
 ### 🏗️ **Enterprise Architecture**
 ```
-alpaca_mcp_server/
+mcp_alpaca_server/
 ├── prompts/           # Intelligent analysis prompts
 ├── tools/            # 40+ specialized trading tools
 ├── resources/        # Real-time market analysis engines
