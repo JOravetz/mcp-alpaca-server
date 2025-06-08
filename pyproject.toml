@@ -1,0 +1,38 @@
+[project]
+name = "alpaca-mcp-server"
+version = "1.0.0"
+description = "Professional Alpaca MCP Server with advanced prompt engineering, institutional-grade analysis, and real-time streaming capabilities"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+keywords = [
+    "alpaca", "trading", "mcp", "model-context-protocol", 
+    "finance", "stocks", "options", "market-data", "streaming",
+    "prompt-engineering", "ai-trading", "institutional-analysis"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Intended Audience :: Developers",
+    "Topic :: Office/Business :: Financial :: Investment",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+    "alpaca-py>=0.40.1",
+    "alpaca-trade-api>=3.2.0",
+    "mcp>=1.9.3",
+    "python-dotenv>=1.1.0",
+    "psutil>=5.9.0",
+]
+
+[dependency-groups]
+dev = [
+    "black>=25.1.0",
+    "mypy>=1.16.0",
+    "ruff>=0.11.13",
+]

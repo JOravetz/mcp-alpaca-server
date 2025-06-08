@@ -1,8 +1,24 @@
-# Environment and secrets
+# Environment and secrets - CRITICAL: Never commit sensitive data
 .env
 .env.local
+.env.production
+.env.development
+.env.test
 *.secret
+*.key
+*.pem
 secret.py
+secrets/
+credentials/
+config.json
+*.credentials
+api_keys.txt
+.secrets/
+
+# Allow example/template files
+!.env.example
+!.mcp.json.example
+!*.example
 
 # Python
 __pycache__/
@@ -12,6 +28,33 @@ __pycache__/
 env/
 venv/
 .venv/
+*.egg-info/
+dist/
+build/
+
+# Claude Code specific
+CLAUDE.md
+.claude/
+
+# Development and backup files
+*.backup*
+*.bak
+*.tmp
+*.temp
+bub.sh
+main.py
+test_*.py
+
+# Project temporary analysis files
+alpaca_implementation_plan.txt
+alpaca_mcp_review.txt
+current_tools.txt
+original_tools.txt
+analyze_alpaca_for_prompts.sh
+extract_alpaca_files.sh
+
+# UV package manager
+uv.lock
 
 # IDE
 .vscode/
@@ -22,3 +65,15 @@ venv/
 # OS
 .DS_Store
 Thumbs.db
+
+# MCP configuration (user-specific)
+.mcp.json
+
+# Personal data and user-specific files
+*.personal
+*.private
+user_data/
+logs/
+*.log
+debug.log
+error.log

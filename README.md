@@ -1,318 +1,380 @@
-# Alpaca MCP Server
+# 🚀 Professional Alpaca MCP Server
 
-This is a Model Context Protocol (MCP) server implementation for Alpaca's Trading API. It enables large language models (LLMs) on Claude Desktop, Cursor, or VScode to interact with Alpaca's trading infrastructure using natural language. This server supports stock trading, options trading, portfolio management, watchlist handling, and real-time market data access.
+A sophisticated **Model Context Protocol (MCP) server** that transforms Alpaca's Trading API into an intelligent trading assistant for LLMs. Built with advanced prompt engineering, modular architecture, and institutional-grade market analysis capabilities.
 
-## Features
+## 🌟 Why This MCP Server is Superior
 
-- **Market Data**
-  - Real-time quotes, trades, and price bars for stocks
-  - Historical price data and trading history
-  - Option contract quotes and Greeks (via snapshots)
-- **Account Management**
-  - View balances, buying power, and account status
-  - Inspect all open and closed positions
-- **Position Management**
-  - Get detailed info on individual holdings
-  - Liquidate all or partial positions by share count or percentage
-- **Order Management**
-  - Place stock and option orders (market or limit)
-  - Cancel orders individually or in bulk
-  - Retrieve full order history
-- **Options Trading**
-  - Search and view option contracts by expiration or strike price
-  - Place multi-leg options strategies
-  - Get latest quotes and Greeks for contracts
-- **Market Status & Corporate Actions**
-  - Check if markets are open
-  - Fetch market calendar and trading sessions
-  - View upcoming corporate announcements (earnings, splits, dividends)
-- **Watchlist Management**
-  - Create, update, and view personal watchlists
-  - Manage multiple watchlists for tracking assets
-- **Asset Search**
-  - Query details for stocks and other Alpaca-supported assets
+### 🧠 **Advanced Prompt Engineering**
+- **Intelligent Trading Prompts**: Pre-built analysis functions that combine multiple data sources
+- **Contextual Insights**: Prompts automatically interpret market conditions and provide actionable recommendations
+- **Professional Analysis**: Institutional-quality portfolio reviews, risk assessments, and position management
 
-## Prerequisites
-
-- Python 3.10+
-- Alpaca API keys (with paper or live trading access)
-- Claude for Desktop or another compatible MCP client
-
-## Installation
-
-1. Clone the repository and move to the repository:
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/alpaca-mcp-server.git
-   cd alpaca-mcp-server
-   ```
-
-2. Install the required packages:
-
-   ```bash
-   pip install mcp alpaca-py python-dotenv
-   ```
-
-## Usage (for Paper Trading) with Claude Desktop
-
-### Edit a `.env` file for your credentials in the project directory
-
-   ```
-   ALPACA_API_KEY = "your_alpaca_api_key_for_paper_account"
-   ALPACA_SECRET_KEY = "your_alpaca_secret_key_for_paper_account"
-   ```
-
-### Start the MCP Server
-
-Open a terminal and run the command below from the project directory:
-
-```bash
-python alpaca_mcp_server.py
+### 🏗️ **Enterprise Architecture**
+```
+alpaca_mcp_server/
+├── prompts/           # Intelligent analysis prompts
+├── tools/            # 40+ specialized trading tools
+├── resources/        # Real-time market analysis engines
+├── config/           # Flexible client management
+└── models/           # Type-safe data structures
 ```
 
-Or use a module invocation:
+### 📊 **Institutional-Grade Analysis**
+- **Market Momentum Detection**: Real-time SPY analysis with configurable indicators
+- **Data Quality Monitoring**: Latency, spread, and feed quality metrics
+- **Intraday P&L Tracking**: Professional performance analytics
+- **Streaming Infrastructure**: High-frequency data processing for active trading
+
+---
+
+## 🎯 Core Capabilities
+
+### 📈 **Market Data & Analysis**
+- **Enhanced Intraday Bars**: 10,000-bar historical data with 1-minute granularity
+- **Real-time Streaming**: Professional-grade data feeds for active trading
+- **Market Momentum**: Configurable technical analysis with SMA crossovers
+- **Data Quality Monitoring**: Latency and spread analysis for optimal execution
+
+### 💼 **Portfolio Management**
+- **Intelligent Position Analysis**: Automated performance categorization and recommendations
+- **Risk Assessment**: Multi-factor risk scoring and concentration analysis
+- **Account Health Monitoring**: Comprehensive portfolio health checks
+- **Professional Reporting**: Institutional-style analysis and insights
+
+### 🎛️ **Advanced Trading Tools**
+- **Multi-Asset Support**: Stocks, options, ETFs with unified interface
+- **Order Management**: All order types including multi-leg options strategies
+- **Extended Hours Trading**: Pre-market and after-hours order validation
+- **Watchlist Intelligence**: Dynamic portfolio tracking and management
+
+---
+
+## 🚀 Quick Start
+
+### 1. **Installation**
 
 ```bash
-python -m alpaca_mcp_server
+# Clone the repository
+git clone <your-repo-url>
+cd alpaca-mcp-server
+
+# Install dependencies with UV (recommended)
+uv sync
+
+# Or use pip
+pip install -r requirements.txt
 ```
 
-### Claude for Desktop Configuration
+### 2. **Security Setup**
 
-1. Open Claude Desktop
-2. Navigate to: `Settings → Developer → Edit Config`
-3. Update your `claude_desktop_config.json`:
+```bash
+# Copy environment template
+cp .env.example .env
+
+# Edit with your Alpaca credentials
+nano .env
+```
+
+```env
+# Your Alpaca API credentials
+APCA_API_KEY_ID="your_alpaca_api_key"
+APCA_API_SECRET_KEY="your_alpaca_secret_key"
+PAPER="true"  # Use paper trading for safety
+```
+
+### 3. **MCP Configuration**
+
+```bash
+# Copy MCP template
+cp .mcp.json.example .mcp.json
+
+# The server automatically reads from .env
+```
+
+### 4. **Start Trading**
+
+```bash
+# Test the server
+python run_alpaca_mcp.py
+
+# Or use the MCP client integration
+```
+
+---
+
+## 💡 Usage Examples
+
+### 🔍 **Intelligent Market Analysis**
+
+The MCP server provides sophisticated analysis prompts that combine multiple data sources:
+
+```python
+# Get comprehensive portfolio health check
+result = await account_analysis()
+```
+
+**What you get:**
+- Portfolio value and cash allocation analysis
+- Risk level assessment with specific factors
+- Concentration risk warnings
+- Strategic recommendations for rebalancing
+- Next steps for optimization
+
+### 📊 **Advanced Position Management**
+
+```python
+# Analyze specific position with intelligent insights
+result = await position_management("AAPL")
+```
+
+**Professional analysis includes:**
+- Performance categorization (Strong Winner, Underperforming, etc.)
+- Specific action recommendations
+- Risk-adjusted position sizing guidance
+- Exit strategy suggestions based on market conditions
+
+### 🎯 **Market Momentum Detection**
+
+```python
+# Real-time market momentum analysis
+result = await get_market_momentum(
+    symbol="SPY",
+    timeframe_minutes=1,
+    analysis_hours=2,
+    sma_short=5,
+    sma_long=20
+)
+```
+
+**Advanced metrics:**
+- Dynamic SMA calculations with trend direction
+- Momentum strength scoring (0-10 scale)
+- Volume confirmation analysis
+- Price volatility assessment
+- Short-term momentum indicators
+
+### 🚀 **Enhanced Intraday Analysis**
+
+```python
+# Get detailed intraday analysis with 10,000 bars
+result = await get_stock_bars_intraday(
+    symbol="NVDA",
+    timeframe="1Min",
+    limit=10000  # Industry-leading data depth
+)
+```
+
+**Professional insights:**
+- Volume surge detection (36x normal patterns)
+- Block trade identification (>10K shares)
+- Institutional vs retail activity analysis
+- Liquidity assessment via bid-ask spreads
+- Price action momentum classification
+
+### 📡 **Real-time Streaming Analysis**
+
+```python
+# Start professional streaming for active trading
+result = await start_global_stock_stream(
+    symbols=["AAPL", "NVDA", "TSLA"],
+    data_types=["trades", "quotes", "bars"],
+    feed="sip",  # All exchanges
+    buffer_size_per_symbol=None  # Unlimited for active stocks
+)
+```
+
+**Advanced streaming features:**
+- Configurable buffer management
+- Multi-symbol concurrent streaming
+- Real-time trade and quote analysis
+- Professional-grade data quality monitoring
+
+---
+
+## 🏗️ Architecture Deep Dive
+
+### 🧠 **Prompt Engineering System**
+
+Our prompts go far beyond simple API calls - they provide **intelligent analysis**:
+
+```python
+# Example: Position Management Prompt
+async def position_management(symbol: Optional[str] = None) -> str:
+    """Strategic position review with actionable guidance"""
+    
+    # Combines multiple data sources
+    position_data = get_position(symbol)
+    market_data = get_snapshot(symbol)
+    account_info = get_account()
+    
+    # Intelligent analysis
+    if unrealized_pnl_pct > 20:
+        return "Strong Winner - Consider profit-taking strategies..."
+    elif unrealized_pnl_pct < -15:
+        return "Significant Loss - Urgent review recommended..."
+```
+
+### 🛠️ **Tool Architecture**
+
+**40+ Specialized Tools** organized by function:
+
+```
+tools/
+├── account/          # Account and portfolio tools
+├── market_data/      # Advanced market data tools
+├── orders/           # Professional order management
+├── streaming/        # Real-time data processing
+└── watchlist/        # Portfolio tracking tools
+```
+
+### 📊 **Resource System**
+
+**Real-time Analysis Engines** for institutional-grade insights:
+
+```
+resources/
+├── market_momentum.py    # Technical analysis engine
+├── data_quality.py      # Feed quality monitoring
+├── intraday_pnl.py      # Performance tracking
+└── streaming_resources.py # Real-time data management
+```
+
+---
+
+## 🎛️ Configuration Options
+
+### 📈 **Market Data Configuration**
+
+```python
+# Configurable analysis parameters
+market_momentum_config = {
+    "timeframe_minutes": 1,     # 1, 5, 15, 30, 60
+    "analysis_hours": 2,        # Historical depth
+    "sma_short": 5,            # Short-term MA
+    "sma_long": 20,            # Long-term MA
+}
+
+# Data quality thresholds
+data_quality_config = {
+    "latency_threshold_ms": 500.0,
+    "quote_age_threshold_seconds": 60.0,
+    "spread_threshold_pct": 1.0,
+}
+```
+
+### 🚀 **Streaming Configuration**
+
+```python
+# Professional streaming setup
+streaming_config = {
+    "feed": "sip",              # All exchanges vs "iex"
+    "buffer_size": None,        # Unlimited for active stocks
+    "data_types": ["trades", "quotes", "bars"],
+    "duration_seconds": None,   # Run indefinitely
+}
+```
+
+---
+
+## 🔧 Integration Examples
+
+### 📱 **Claude Desktop Integration**
+
+Add to your Claude Desktop MCP configuration:
 
 ```json
 {
   "mcpServers": {
     "alpaca": {
-      "command": "python",
-      "args": [
-        "/path/to/alpaca_mcp_server.py"
-      ],
-      "env": {
-        "ALPACA_API_KEY": "your_alpaca_api_key_for_paper_account",
-        "ALPACA_SECRET_KEY": "your_alpaca_secret_key_for_paper_account"
-      }
+      "type": "stdio",
+      "command": "bash",
+      "args": ["-c", "source .venv/bin/activate && python run_alpaca_mcp.py"],
+      "cwd": "/path/to/alpaca-mcp-server"
     }
   }
 }
 ```
 
-## API Key Configuration for Live Trading
+### 💬 **Natural Language Trading**
 
-This MCP server connects to Alpaca's **paper trading API** by default for safe testing.
-To enable **live trading with real funds**, update the following configuration files:
+With Claude Desktop, you can now:
 
-### 🔐 Set Your API Credentials in Two Places:
+```
+"Analyze my portfolio and give me a comprehensive health check"
+→ Triggers account_analysis() prompt with professional insights
 
-1. **Claude for Desktop Configuration**
+"Check the market momentum for SPY over the last 2 hours"
+→ Executes market_momentum analysis with technical indicators
 
-   In `claude_desktop_config.json`, provide your keys for your live account as environment variables:
+"Start streaming NVDA and TSLA for real-time analysis"
+→ Initiates professional streaming with optimal configuration
 
-   ```json
-   {
-     "mcpServers": {
-       "alpaca": {
-         "command": "python",
-         "args": [
-           "/path/to/alpaca_mcp_server.py"
-         ],
-         "env": {
-           "ALPACA_API_KEY": "your_alpaca_api_key_for_live_account",
-           "ALPACA_SECRET_KEY": "your_alpaca_secret_key_for_live_account"
-         }
-       }
-     }
-   }
-   ```
+"What's the intraday action on AAPL with volume analysis?"
+→ Gets 10,000 1-minute bars with institutional-grade analysis
+```
 
-2. **`.env` in the project directory**
+---
 
-   ```
-   ALPACA_API_KEY = "your_alpaca_api_key_for_live_account"
-   ALPACA_SECRET_KEY = "your_alpaca_secret_key_for_live_account"
-   PAPER = False
-   ```
+## 🔒 Security & Best Practices
 
-## Available Tools
+### ⚠️ **Critical Security**
+- **Never commit API keys** - Use environment variables only
+- **Paper trading first** - Always test with `PAPER="true"`
+- **Regular key rotation** - Update credentials periodically
+- **See SECURITY.md** for comprehensive guidelines
 
-### Account & Positions
+### 🎯 **Trading Best Practices**
+- **Start with small positions** when testing live trading
+- **Use position limits** to manage risk exposure
+- **Monitor data quality** before making trading decisions
+- **Review prompts and analysis** before taking action
 
-* `get_account_info()` – View balance, margin, and account status
-* `get_positions()` – List all held assets
-* `get_open_position(symbol)` – Detailed info on a specific position
-* `close_position(symbol, qty|percentage)` – Close part or all of a position
-* `close_all_positions(cancel_orders)` – Liquidate entire portfolio
+---
 
-### Stock Market Data
+## 📚 Advanced Features
 
-* `get_stock_quote(symbol)` – Real-time bid/ask quote
-* `get_stock_bars(symbol, start_date, end_date)` – OHLCV historical bars
-* `get_stock_latest_trade(symbol)` – Latest market trade price
-* `get_stock_latest_bar(symbol)` – Most recent OHLC bar
-* `get_stock_trades(symbol, start_time, end_time)` – Trade-level history
+### 🧮 **Institutional Analysis Tools**
 
-### Orders
+Coming soon (stored as todo features):
+- **Volcanic Accumulation Detector**: Identify institutional buying patterns
+- **Pre-Breakout Scanner**: Detect acceleration in trade frequency
+- **Microstructure Analysis**: Raw data access for velocity calculations
+- **Block Trade Detection**: Identify large institutional orders
 
-* `get_orders(status, limit)` – Retrieve all or filtered orders
-* `place_stock_order(symbol, side, quantity, order_type="market", limit_price=None, stop_price=None, trail_price=None, trail_percent=None, time_in_force="day", extended_hours=False, client_order_id=None)` – Place a stock order of any type (market, limit, stop, stop_limit, trailing_stop)
-* `cancel_order_by_id(order_id)` – Cancel a specific order
-* `cancel_all_orders()` – Cancel all open orders
+### 📊 **Professional Reporting**
 
-### Options
+The server provides institutional-quality analysis:
+- Multi-factor risk assessment
+- Performance attribution analysis
+- Concentration risk monitoring
+- Cash allocation optimization
+- Strategic rebalancing recommendations
 
-* `get_option_contracts(underlying_symbol, expiration_date)` – Fetch contracts
-* `get_option_latest_quote(option_symbol)` – Latest bid/ask on contract
-* `get_option_snapshot(symbol_or_symbols)` – Get Greeks and underlying
-* `place_option_market_order(legs, order_class, quantity)` – Execute option strategy
+---
 
-### Market Info & Corporate Actions
+## 🤝 Contributing
 
-* `get_market_clock()` – Market open/close schedule
-* `get_market_calendar(start, end)` – Holidays and trading days
-* `get_corporate_announcements(...)` – Earnings, dividends, splits
+This MCP server represents a new standard for trading AI integration. Contributions welcome:
 
-### Watchlists
+1. **Prompt Engineering**: Enhance analysis capabilities
+2. **Tool Development**: Add specialized trading functions
+3. **Resource Building**: Create new analysis engines
+4. **Documentation**: Improve examples and guides
 
-* `create_watchlist(name, symbols)` – Create a new list
-* `update_watchlist(id, name, symbols)` – Modify an existing list
-* `get_watchlists()` – Retrieve all saved watchlists
+---
 
-### Assets
+## 📄 License
 
-* `get_asset_info(symbol)` – Search asset metadata
-* `get_all_assets(status)` – List all tradable instruments
+MIT License - See LICENSE file for details.
 
-## Example Natural Language Queries
-See the "Example Queries" section below for 50 real examples covering everything from trading to corporate data to option strategies.
+---
 
-### Basic Trading
-1. What's my current account balance and buying power?
-2. Show me my current positions.
-3. Buy 10 shares of AAPL at market price.
-4. Sell 5 shares of TSLA with a limit price of $300.
-5. Cancel all open stock orders.
-6. Cancel the order with ID abc123.
-7. Liquidate my entire position in GOOGL.
-8. Close 10% of my position in NVDA.
-9. How many shares of AMZN do I currently hold?
-10. Place a limit order to buy 100 shares of MSFT at $450.
-11. Place a market order to sell 25 shares of META.
+## 🚀 Get Started Now
 
-### Option Trading
-12. Show me available option contracts for AAPL expiring next month.
-13. Get the latest quote for AAPL250613C00200000.
-14. Retrieve the option snapshot for SPY250627P00400000.
-15. Liquidate my position in 2 contracts of QQQ calls expiring next week.
-16. Place a market order to buy 1 call option on AAPL expiring next Friday.
-17. What are the option Greeks for TSLA250620P00500000?
-18. Find all TSLA option contracts with strike prices within 5% of the current market price.
-19. Get all contracts for SPY expiring in June that are call options.
-20. Place a bull call spread using AAPL June 6th options: one with a 190.00 strike and the other with a 200.00 strike.
+1. **Clone the repository**
+2. **Follow the security setup** in SECURITY.md
+3. **Configure your environment** with .env
+4. **Start with paper trading**
+5. **Experience professional-grade trading AI**
 
-### Market Information
-21. Is the US stock market currently open?
-22. What are the market open and close times today?
-23. Show me the market calendar for next week.
-24. Are there any corporate announcements for major tech stocks this month?
-25. What are the next dividend announcements for SPY?
-26. List earnings announcements coming tomorrow.
-
-### Historical & Real-time Data
-27. Show me AAPL's daily price history for the last 5 trading days.
-28. What was the closing price of TSLA yesterday?
-29. Get the latest bar for GOOG.
-30. What was the latest trade price for NVDA?
-31. Show me the most recent quote for MSFT.
-32. Retrieve the last 100 trades for AMD.
-33. Show me intraday bars for AMZN from last Tuesday through last Friday.
-
-### Orders
-34. Show me all my open and filled orders from this week.
-35. What orders do I have for AAPL?
-36. List all limit orders I placed in the past 3 days.
-37. Filter all orders by status: filled.
-38. Get me the order history for yesterday.
-
-### Watchlists
-39. Create a new watchlist called "Tech Stocks" with AAPL, MSFT, and NVDA.
-40. Update my "Tech Stocks" watchlist to include TSLA and AMZN.
-41. What stocks are in my "Dividend Picks" watchlist?
-42. Remove META from my "Growth Portfolio" watchlist.
-43. List all my existing watchlists.
-
-### Asset Information
-44. Search for details about the asset 'AAPL'.
-45. List all tradeable US Large-cap stocks.
-46. Show me the top 5 tradable crypto assets by trading volume.
-47. Filter all assets with status 'active'.
-48. Show me details for the stock with symbol 'GOOGL'.
-
-### Combined Scenarios
-49. Get today's market clock and show me my buying power before placing a limit buy order for TSLA at $340.
-50. Place a bull call spread with SPY July 3rd options: buy one 5% above and sell one 3% below the current SPY price.
-
-## Example Outputs
-
-The MCP server provides detailed, well-formatted responses for various trading queries. Here are some examples:
-
-### Option Greeks Analysis
-Query: "What are the option Greeks for TSLA250620P00500000?"
-
-Response:
-Option Details:
-- Current Bid/Ask: $142.62 / $143.89
-- Last Trade: $138.85
-- Implied Volatility: 92.54%
-
-Greeks:
-- Delta: -0.8968 (Very Bearish)
-- Gamma: 0.0021 (Low Rate of Change)
-- Theta: -0.2658 (Time Decay: $26.58/day)
-- Vega: 0.1654 (Volatility Sensitivity)
-- Rho: -0.3060 (Interest Rate Sensitivity)
-
-Key Insights:
-- High Implied Volatility (92.54%)
-- Deep In-the-Money (Delta: -0.90)
-- Significant Time Decay ($27/day)
-
-### Multi-Leg Option Order
-Query: "Place a bull call spread using AAPL June 6th options: one with a 190.00 strike and the other with a 200.00 strike."
-
-Response:
-Order Details:
-- Order ID: fc1c04b1-8afa-4b2d-aab1-49613bbed7cb
-- Order Class: Multi-Leg (MLEG)
-- Status: Pending New
-- Quantity: 1 spread
-
-Spread Legs:
-1. Long Leg (BUY):
-   - AAPL250606C00190000 ($190.00 strike)
-   - Status: Pending New
-
-2. Short Leg (SELL):
-   - AAPL250606C00200000 ($200.00 strike)
-   - Status: Pending New
-
-Strategy Summary:
-- Max Profit: $10.00 per spread
-- Max Loss: Net debit paid
-- Breakeven: $190 + net debit paid
-
-These examples demonstrate the server's ability to provide:
-- Detailed market data analysis
-- Comprehensive order execution details
-- Clear strategy explanations
-- Well-formatted, easy-to-read responses
-
-The server maintains this level of detail and formatting across all supported queries, making it easy to understand and act on the information provided.
-
-## ⚠️ Security Notice
-
-This server can place real trades and access your portfolio. Treat your API keys as sensitive credentials. Review all actions proposed by the LLM carefully, especially for complex options strategies or multi-leg trades.
-
-## License
-
-MIT
+Transform your trading workflow with intelligent analysis, institutional-grade tools, and advanced prompt engineering. This isn't just an API wrapper - it's a comprehensive trading intelligence platform.

@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "alpaca": {
+      "type": "stdio",
+      "command": "bash",
+      "args": ["-c", "source .venv/bin/activate && python run_alpaca_mcp.py"],
+      "cwd": "/home/jjoravet/alpaca-mcp-server",
+      "env": {
+        "APCA_API_KEY_ID": "your_alpaca_api_key_here",
+        "APCA_API_SECRET_KEY": "your_alpaca_secret_key_here",
+        "PAPER": "true"
+      }
+    }
+  }
+}
